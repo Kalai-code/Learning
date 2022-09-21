@@ -1,0 +1,39 @@
+Docker:
+    Docker is a platform for building, running and shipping applications.
+    Docker helps in packaging the application to run on any machines.
+
+Container:
+    It is an isolated environment for running an application.
+    Allows to run multiple applications in isloation.
+    Lightweight(does not require full OS)
+    Containers share OS(kernel) of the host.
+    Containers are like processes(special process) running on the machine.
+
+Virtual machines:
+    Virtual machines is an abstration of a machine or physical hardwares. We can run several VMs in a pysical machine.
+    For example, in mac we can run windows and linux VMs. This is achieved by a tool called Hypervisor. Hypervisor is a software to create and manage VMs.
+    Some of the Hypervisers are VMware, VirtualBox etc
+
+Docker Architecture:
+    Docker uses client-server architecture. Client talks to server(Docker Engine) using REST API.
+
+Development Workflow:
+    Application + Dockerfile is packaged into an image.
+    Image contains A cut down OS, A runtime environment(Eg: Python), Application files, Third party libraries, Environmental Variables etc
+    When the image is built, we tell docker to create a container. Container is a special process because it has its own file system provided by the image.
+    The image gets loaded in the container and we run the container in development machine.
+    Docker to Docker hub(similar to git and github) and the image can be run in any other test/prod environment.
+
+steps to build image:
+1. Create a folder and navigate to the folder using mkdir <foldername> and cd <foldername>
+2. Create an app in the folder with the code using code . (opens the folder in VSCode)
+3. Add Dockerfile file inside the folder and mention the steps for installation and execution
+4. Create a build using the following command
+    docker build -t <imagename> .(foldername)
+    The above command builds the image.
+5. To view all the images in the folder use
+    docker images or 
+    docker image ls --> for short list
+6. To run docker,
+    docker run <imagename> --> this command runs the docker image for any directory.
+    
