@@ -11,7 +11,7 @@ list_matrix = [[i,j] for i in range(1,5) for j in range(1,3)]
 print("List matrix: ", list_matrix)
 
 #list split
-list_words = 'Hello there'
+list_words = 'Hellothere'
 list_split = [ch for ch in list_words]
 print("Split the List: ", list_split)
 print(list(list_words))
@@ -31,3 +31,18 @@ def sumOfDigits(num):
 list_numbers = [367,111,562,945,6726,873]
 list_digitSum = [sumOfDigits(i) for i in list_numbers]
 print("Sum of Digitis of elements in the list: ", list_digitSum)
+
+# example of if else
+list_num = [1,2,3,4,5,6]
+list_oddeven = ['Odd' if num % 2 != 0 else 'Even' for num in list_num]
+print("Print Odd or Even Numbers: ",list_oddeven)
+
+#example of 2 if conditions
+list_numdivisible = [num for num in range(100) if num % 2 == 0 if num % 5 == 0]
+print("Numbers divisible by 2 and 5: ",list_numdivisible)
+
+#List Comprehension using Nested Loops
+nums1 = [1, 2, 3]
+nums2 = [4, 5, 6]
+nums=[(x,y) for x in nums1 for y in nums2]
+print("Nested Loops: ",nums)
