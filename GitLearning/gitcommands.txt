@@ -1,0 +1,101 @@
+Git --> distributed version control system. When server goes offline, the chnages can be shared within the team members.
+Install latest version of git and configure some settings to get started
+
+git version --> shows the version of git in the system.
+The configuration setting can be made at 3 different levels
+1. system - All users
+2. global - All repositories of the current users
+3. local - The current repository
+
+git config --global user.name "Kalaichitra Rangasamy" --> sets the username. Use double quotes if there is space.
+git config --global user.email "abc@abc.com" --> sets the email 
+git config --global core.editor "code --wait" --> sets the default editor which is VSCode. --wait will wait for the user to clone the editor view to proceed further.
+git config --global -e --> opens the gitconfig files which has all the settings
+git config --global core.autocrlf <input/true> --> how git handles end of line. True for windows and input for linus/maxOS
+git config --help --> shows the config command with all the options. Press space to move forward and q to quit
+git config -h --> gives the short summary of the config command and options.
+
+create a repository and get into the repository using mkdir <foldername> and cd <foldername>
+git init - initializes empty git repository. Hidden .git repository gets created.
+ls - a --> list the hidden .git repository
+
+git workflow:
+    Add code/files to the working directory, once the development is done, add the modified files to the staging area using "git add" command.
+    Then commit the changes to git repository using "git commit" command.
+
+Staging workflow:
+    git add file1.txt file2.txt --> add multiple files to staging area
+    git add *.txt --> adds all modified txt files to the staging area
+    git add . - add all the modified files from the folder recursively to the staging area
+
+Commit to store permanently in git repository:
+
+    git commit -m "<message>" - commits the changes. <message> enter a valid message
+    git commit --> opens the commit_editmsg file in VSCode from .git repository. Enter short and log decription message
+
+commit without adding to staging area:
+    git commit -a -m <message> or git commit -am <message>
+
+Remove files:
+rm <filename> -- remove file from the working area. rm command removes files only from the working area but the file is still present in staging area.
+
+git ls-files --> this command shows the list of files in the git repository
+
+git add <filename> --> this removes the file from the staging area after the file is removed from work area.
+git commit --> run this command to make changes to the git repository
+git rm <filename> --> this command removes the file from the wroking area as well as the staging area
+
+Move or rename file:
+mv <sourcefilename> <destinationfilename> --> moves the content from source to destination
+then to add the file to staging area use 
+    1. git add <sourcefilename>
+    2. git add <destinationfilename>
+
+git mv <sourcefilename> <destinationfilename> --> git takes care of the above 2 step process for us
+
+Ignore files:
+.gitignore --> this has all the files and folders to be ignored committing to the git repository
+
+git rm --cached -r <foldername/filename> --> removes the file from the staging area and not the working area.
+
+git status - shows the status of the changes made in the working directory
+git status -s --> for short status
+
+Viewing the staged and unstaged changes:
+git diff --staged --> shows the list of changes going in the next commit. Compares the code from the last commit with the code in staging area.
+git diff --> shows the difference in the code from staging area and working directory
+
+git config --global diff.tool vscode --> sets VSCode as the default editor for comparing the difference
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+git difftool --staged --> hows the list of changes going in the next commit. Compares the code from the last commit with the code in staging area.
+git difftool --> shows the difference in the code from staging area and working directory
+
+Viewing History:
+git log - shows the logs of all committed changes sorted from latest to earliest
+git log --oneline - shows the logs in short summary from latest to earliest
+git log --oneline --reversed --> shows the logs n short summary from oldest to earliest 
+
+View commit history:
+git show <commitID> --> shows the details of particular commit(only the differences are shown)
+git show HEAD~1 --> shows 1 commit starts from the HEAD commit(latest)
+git ls-tree HEAD~1 --> shows all the files and directories in a commit
+
+Unstaging Files:
+git restore --staged <filename> --> restores the file from the staging area to the working directory. 
+                                    In this case, the last commit version is moved to the staging area.
+
+Discarding local changes:
+git restore <filename> --> git takes the file in the staging area and updates the working environment.
+
+Restoring a file to an Earlier Version:
+git restore --source=HEAD~1 <filename> --> this command recovers from the mentioned version
+
+git clean -fd --> git forces to clean up the untracked files from the working directory.
+
+git pull -
+git push -
+git fetch
+git remote add <remote> <url> - 
+git branch - shows the current branch
+git remote - shows the remote branch
+rm -rf .git --> removes the git repository. All the history will be lost if we remove the git repository
