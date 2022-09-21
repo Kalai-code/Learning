@@ -1,0 +1,16 @@
+Linux commands:
+
+mkdir <name> - to create a directory
+cd <name> - to navigate to the directory
+pwd - print the working directory
+whoami - shows the current user
+ls - list the files and folders in the current directory
+ls -l - long listing of files and folders in the current directory
+touch <filename> - creates a file with the given name
+cat <filename> - to view the contents of the file
+code <filename> - opens the file in VS code
+cd .. - to move to the previous directory
+ls -a - shows the hidden files in the current directory
+ctrl + l - to clear the screen
+ps - shows the processes running on the current shell
+
