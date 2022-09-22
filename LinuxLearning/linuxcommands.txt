@@ -1,16 +1,57 @@
 Linux commands:
 
+echo hello - prints hello on the terminal
+whoami - shows the current user
+echo $0 - shows the location of the shell program i.e., /bin/bash
+history - list the commands which are executed Earlier
+pwd - print the working directory
+
 mkdir <name> - to create a directory
 cd <name> - to navigate to the directory
-pwd - print the working directory
-whoami - shows the current user
+mv <souce> <destination> - moves the file or folder from source to destination. This command can also be used for renaming a file or folder.
+
 ls - list the files and folders in the current directory
 ls -l - long listing of files and folders in the current directory
+ls -1 - list the files and folder names one by one
+ls /bin - lists all the files in the bin folder
+cd ~ - takes us to the home directory of the user
+
 touch <filename> - creates a file with the given name
+touch <filename1> <filename2> - creates multiple files.
 cat <filename> - to view the contents of the file
+cat <sourcefilename> > <destinationfilename> - copies the content from the source file and writes it to the destination file.
+cat <filename1> <filename2> > <filename3> - copies the content from filename1 and filename3 and writes it to filename3.
+more <filename> - to view contents of large file. Press space to move the pages. We can only scroll down using more command. We cannot scroll up to see the contents.
+                    to exit, press q
+less <filename> - to see contents of large file. Use up and down arrow to scroll between the pages.Press q to quit
+head -n 5 <filename> - shows the first 5 lines of the file.
+tail -n 5 <filename> - shows the last 5 lines of the file.
+
 code <filename> - opens the file in VS code
 cd .. - to move to the previous directory
 ls -a - shows the hidden files in the current directory
 ctrl + l - to clear the screen
 ps - shows the processes running on the current shell
+rm <filename1> <filename2> - removes the files from the directory
+rm -r <directoryname>/ - removes the directory and its contents recursively
+
+ubuntu:
+
+apt(advanced package tool)
+apt update - updates the packaged
+apt install nano - installs the nano text editor package
+apt list - shows all the packages
+apt remove nano - uninstalls the nano package
+
+File system
+Environmental Variables
+Shell scripting basics
+cron job
+df command
+top, atop command
+memstat, iostat
+who -a
+last
+iostat
+vmstat
 
