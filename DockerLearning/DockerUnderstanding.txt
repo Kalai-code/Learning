@@ -42,8 +42,9 @@ Steps to build "Hello World" using python:
 2. write code to hello-world.py file
 3. write steps to Dockerfile
 4. Build the image - docker build -t hello_world .
-5. Check for the image - docker images
+5. Check for the image - docker images or docker image ls
 6. Run the image - docker run hello_world
+7. Run the image in bash - docker run -it hello_world bash
 7. View all the containers - docker ps -a
 8. View the logs of particular container - docker logs <container id>
 
@@ -59,3 +60,12 @@ USER - to specify which user has to run the application
 CMD - command to be executed when we start the container
 ENTRYPOINT - command to be executed when we start the container
 
+Ignore files before building image:
+1. create a file ".dockerignore" in the directory and the files/folders to be ignored which building an image.
+
+docker image prune - to remove dangling images
+docker container prune - to remove stopped containers
+docker image rm <imagename> - removes the image
+docker build -t <imagename> :<tagname> . - to add tag while creating build
+docker image rm <imagename> :<tagname> - to remove the image based on tag name
+docker images tag <imagename>:<oldtagname> <imagename>:<newtagname> - to add tag after creating build.
