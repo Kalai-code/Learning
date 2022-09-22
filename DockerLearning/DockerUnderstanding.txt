@@ -19,7 +19,7 @@ Docker Architecture:
 
 Development Workflow:
     Application + Dockerfile is packaged into an image.
-    Image contains A cut down OS, A runtime environment(Eg: Python), Application files, Third party libraries, Environmental Variables etc
+    Image contains a cut down OS, A runtime environment(Eg: Python), Application files, Third party libraries, Environmental Variables etc
     When the image is built, we tell docker to create a container. Container is a special process because it has its own file system provided by the image.
     The image gets loaded in the container and we run the container in development machine.
     Docker to Docker hub(similar to git and github) and the image can be run in any other test/prod environment.
@@ -27,7 +27,7 @@ Development Workflow:
 steps to build image:
 1. Create a folder and navigate to the folder using mkdir <foldername> and cd <foldername>
 2. Create an app in the folder with the code using code . (opens the folder in VSCode)
-3. Add Dockerfile file inside the folder and mention the steps for installation and execution
+3. Add Dockerfile file inside the folder and mention the steps for installation and execution.
 4. Create a build using the following command
     docker build -t <imagename> .(foldername)
     The above command builds the image.
@@ -36,4 +36,26 @@ steps to build image:
     docker image ls --> for short list
 6. To run docker,
     docker run <imagename> --> this command runs the docker image for any directory.
-    
+
+Steps to build "Hello World" using python:
+1. mkdir learning-docker;cd learning-docker; mkdir HelloWorld-docker;cd HelloWorld-docker; touch hello-world.py;touch Dockerfile
+2. write code to hello-world.py file
+3. write steps to Dockerfile
+4. Build the image - docker build -t hello_world .
+5. Check for the image - docker images
+6. Run the image - docker run hello_world
+7. View all the containers - docker ps -a
+8. View the logs of particular container - docker logs <container id>
+
+Dockerfile commands:
+FROM - to install software
+WORKDIR - to specify working directory
+COPY - copy files to working directory
+ADD - copy files to working directory
+RUN - for executing OS commands
+ENV - to set environmental Variables
+EXPOSE - to tell our container that docker is starting on a particular port
+USER - to specify which user has to run the application
+CMD - command to be executed when we start the container
+ENTRYPOINT - command to be executed when we start the container
+
