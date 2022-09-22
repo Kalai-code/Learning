@@ -43,15 +43,37 @@ apt install nano - installs the nano text editor package
 apt list - shows all the packages
 apt remove nano - uninstalls the nano package
 
-File system
-Environmental Variables
+File system:
+df -k - df(disk free). This command displays the disk space usage in kilobytes
+df -h - This command displays the disk space usage in kilobytes in human understandable format.
+du <foldername> - du(disk usage). This command is used to show disk space usage on a particular directory.
+du -h <foldername> - shows the output in human understandable format
+
+Environmental Variables:
+printenv - shows the list of all environmental Variables
+printenv $SHELL - shows the location of current user's shell program.
+printenv | grep SHELL - shows all the environment Variables which has the word SHELL in it.
+ECHO $USER: Gives current user's name.
+ECHO $PATH: Gives search path for commands.
+ECHO $PWD: Gives the path of present working directory.
+ECHO $HOME: Gives path of home directory.
+ECHO $HOSTNAME: Gives name of the host.
+ECHO $LANG: Gives the default system language.
+ECHO $EDITOR: Gives default file editor.
+ECHO $UID: Gives user ID of current user.
+ECHO $SHELL: Gives location of current user's shell program.
+
+Setting Environmental Variable:
+export Variable=value - sets the environmental value for the given Variable
+
+who -u - 
 Shell scripting basics
 cron job
-df command
 top, atop command
 memstat, iostat
 who -a
 last
 iostat
 vmstat
+
 
