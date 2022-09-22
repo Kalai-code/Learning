@@ -31,9 +31,20 @@ code <filename> - opens the file in VS code
 cd .. - to move to the previous directory
 ls -a - shows the hidden files in the current directory
 ctrl + l - to clear the screen
-ps - shows the processes running on the current shell
 rm <filename1> <filename2> - removes the files from the directory
 rm -r <directoryname>/ - removes the directory and its contents recursively
+grep <searchstring> <filename> - grep(global regular expression print). This command searches for the string in the file provided and returns the result.
+grep -i <searchstring> <filename> - ignores the case which performing search. We can perform search in multiple files, using patterns. 
+grep -i -r <searchstring> . - searches for the string in current directory
+find - this command finds all the directories and files present in the current directory
+find type -d - returns only the directories from the current directory
+find type -f - returns only the files from the current directory
+
+Chaining commands:
+mkdir <directoryname> ; cd <directoryname> ; echo done - executes all the commands together
+mkdir <directoryname> && cd <directoryname> && echo done - if the first command fails, 2nd and 3rd doesnt get executed
+mkdir <directoryname> || echo directory Exists - if first command executes successfully, 2nd doesnt get executed. If 1st command fails, 2nd gets executed
+
 
 ubuntu:
 
@@ -64,10 +75,33 @@ ECHO $UID: Gives user ID of current user.
 ECHO $SHELL: Gives location of current user's shell program.
 
 Setting Environmental Variable:
-export Variable=value - sets the environmental value for the given Variable
+export Variable=value - sets the environmental value for the given Variable for the current terminal
+echo Variable=value >> .bashrc - run this command from the home directory to set permanent environment Variable
+
+Process:
+ps - shows the processes running on the current shell
+kill <processID> - terminates a particular process
+
+File permissions:
+ls -l - list the files and folders in a directory.
+drwxrwxr-x - d - directory, r - read, w - write, x - execute
+    d rwx rwx r-x
+        d is directory. For files its -
+        rwx - next 3 is for the user who owns this file.
+        rwx - represents the group that owns this file.
+        r-x - for everyone earliest
+chmod u+x - this command adds the execute permission for the user
+chmod g+x - execute permission for group
+chmod o+x - for others
+chmod u-x - removes the execute permission for the user.
+
+Shell scripting basics:
+1. Create a file with the extension ".sh". i.e., <filename>.sh
+2. Write linux commands into the file.
+3. Run the file using "sh <filename>" to see the output in the terminal
 
 who -u - 
-Shell scripting basics
+
 cron job
 top, atop command
 memstat, iostat
