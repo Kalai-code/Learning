@@ -98,7 +98,9 @@ chmod u-x - removes the execute permission for the user.
 Shell scripting basics:
 1. Create a file with the extension ".sh". i.e., <filename>.sh
 2. Write linux commands into the file.
-3. Run the file using "sh <filename>" to see the output in the terminal
+3. Run the file using "./<filename>.sh" to see the output in the terminal
+
+echo $$ - the command writes the PID of the current shell
 
 who -u - 
 
