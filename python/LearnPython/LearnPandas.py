@@ -1,13 +1,13 @@
 import pandas as pd
 import os
+import json
 
-print(os.path.dirname(os.path.abspath(__file__)))
 #path to the csv document
 docpath = os.path.dirname(os.path.abspath(__file__)) + "/Documents/"
 # Read CSV file
 def readCSVFileWithHeader():
-    df = pd.read_csv(docpath+"employees.csv",delimiter=',')
-    print(df.to_string())
+    df = pd.read_csv(docpath+"employees.csv")
+    print(df)
 
 # Read CSV file and add header
 def readCSVFileWithoutHeader():
@@ -49,11 +49,10 @@ def readCSVFileAndUseHeadTail():
     print(df.tail(10))
 
 def readEachRecord():
-    df = pd.read_csv(docpath+"employees.csv",delimiter=',')
+    df = pd.read_csv(docpath+"employees.csv")
     print(df.columns.values)
     for row in df.itertuples():
         print(list(row[1:]))
 
 
-
-readEachRecord()
+readCSVFileWithHeader()
