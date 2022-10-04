@@ -1,1 +1,4 @@
 postman cheat sheet - https://postman-quick-reference-guide.readthedocs.io/en/latest/cheatsheet.html
+
+linux cheat sheet - https://www.guru99.com/linux-commands-cheat-sheet.html
+
