@@ -10,3 +10,30 @@ def hello():
     print("Hello world")
 
 hello()
+
+def outerfunc(func):  
+    print("This is outer function")
+    def innerfunc():       
+        func()
+        print("This is inner function")
+    return innerfunc
+
+def middlefunc():
+    print("This is middle function")
+
+middlefunc = outerfunc(middlefunc)
+
+middlefunc()
+
+def headerfunc(func):   
+    def footerfunc():
+        print("Hello There!")
+        func()
+        print("Enjoy Learning!!")
+    return footerfunc
+
+@headerfunc
+def bodyfunc():
+    print("Are you ready to Learn Python?")
+
+bodyfunc()

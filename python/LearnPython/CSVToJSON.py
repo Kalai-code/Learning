@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import json
+import csv
 
 #path to the csv document
 docpath = os.path.dirname(os.path.abspath(__file__)) + "/Documents/"
@@ -32,4 +33,6 @@ def CSVToJSONOption3():
     print(json.dumps(parsed))  
 
 
-CSVToJSONOption1()
+
+
+CSVToJSONOption3()
